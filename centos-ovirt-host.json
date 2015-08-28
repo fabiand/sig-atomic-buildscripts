@@ -1,0 +1,20 @@
+{
+    "comment": "oVirt Host Defs",
+
+    "include": "centos-atomic-host.json",
+
+    "osname": "centos-ovirt-host",
+    "ref": "centos/7/ovirt/x86_64/host",
+
+    "repos": ["ovirt-3.6"],
+
+    "initramfs-args": ["--no-hostonly"],
+
+    "packages": ["vdsm", "ovirt-host-deploy-offline", "vdsm-cli",
+                 "ovirt-hosted-engine-setup",
+                 "glusterfs-server"],
+
+    "units": ["supervdsmd.service", "vdsmd.service", "cockpit.socket"],
+    "default_target": "multi-user.target"
+
+}
