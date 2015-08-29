@@ -14,3 +14,10 @@ ovirt-3.6.repo:
 
 RPM-GPG-ovirt:
 	curl -o $@ "https://gerrit.ovirt.org/gitweb?p=ovirt-release.git;a=blob_plain;f=ovirt-release-3.6/RPM-GPG-ovirt;hb=HEAD"
+
+pull: REPO=$$PWD/ostree-repo
+pull:
+	ostree --repo=$(REPO) init --mode=archive-z2
+	ostree --repo=$(REPO) remote add --no-gpg-verify jenkins http://jenkins.ovirt.org/job/fabiand_node_ostree/ws/rpm-ostree/repo/
+	ostree --repo=$(REPO) pull -v jenkins centos/7/ovirt/x86_64/host
+
