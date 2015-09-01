@@ -15,6 +15,7 @@
                  "glusterfs-server"],
 
     "units": ["supervdsmd.service", "vdsmd.service", "cockpit.socket"],
-    "default_target": "multi-user.target"
+    "default_target": "multi-user.target",
 
+    "documentation": true
 }
