@@ -6,7 +6,7 @@
     "osname": "centos-ovirt-host",
     "ref": "centos/7/x86_64/ovirt-host-nightly",
 
-    "repos": ["ovirt-3.5*"],
+    "repos": ["ovirt-3.5*", "fabiand*"],
 
     "initramfs-args": ["--no-hostonly"],
 

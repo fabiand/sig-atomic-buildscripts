@@ -12,6 +12,9 @@ ovirt-3.5.repo:
 	curl "https://gerrit.ovirt.org/gitweb?p=ovirt-release.git;a=blob_plain;f=ovirt-release-3.5/ovirt-$(DIST)$(RELVER)-deps.repo.in;hb=HEAD" >> "$@"
 	sed -i "s/@OVIRT_SLOT@/3.5/g ; s/@DIST@/$(DIST)/g ; s/\$$releasever/$(RELVER)/g" "$@"
 
+fabiand-ovirt-tree-hacks.spec-epel-7.repo:
+	curl "https://copr.fedoraproject.org/coprs/fabiand/ovirt-tree-hacks.spec/repo/epel-7/fabiand-ovirt-tree-hacks.spec-epel-7.repo" >> "$@"
+
 RPM-GPG-ovirt:
 	curl -o $@ "https://gerrit.ovirt.org/gitweb?p=ovirt-release.git;a=blob_plain;f=ovirt-release-3.5/RPM-GPG-ovirt;hb=HEAD"
 
