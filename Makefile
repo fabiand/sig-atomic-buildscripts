@@ -3,7 +3,7 @@
 DIST=el
 RELVER=7
 
-all: ovirt-3.5.repo RPM-GPG-ovirt
+all: ovirt-3.5.repo RPM-GPG-ovirt fabiand-ovirt-tree-hacks.spec-epel-7.repo
 	echo Done
 
 ovirt-3.5.repo:
