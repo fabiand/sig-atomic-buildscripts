@@ -12,7 +12,8 @@
 
     "packages": ["vdsm", "ovirt-host-deploy-offline", "vdsm-cli",
                  "ovirt-hosted-engine-setup",
-                 "glusterfs-server"],
+                 "glusterfs-server",
+                 "ovirt-tree-hacks"],
 
     "units": ["supervdsmd.service", "vdsmd.service", "cockpit.socket"],
     "default_target": "multi-user.target",
