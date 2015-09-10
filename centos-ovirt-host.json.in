@@ -4,9 +4,9 @@
     "include": "centos-atomic-host.json",
 
     "osname": "centos-ovirt-host",
-    "ref": "centos/7/x86_64/ovirt-host-nightly",
+    "ref": "centos/7/x86_64/ovirt/host/ovirt-@OVIRT_SLOT@",
 
-    "repos": ["ovirt-3.5*", "fabiand*"],
+    "repos": ["ovirt-*", "fabiand*"],
 
     "initramfs-args": ["--no-hostonly"],
 

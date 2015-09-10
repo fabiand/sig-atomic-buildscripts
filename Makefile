@@ -7,8 +7,11 @@ OBJS=ovirt-$(OVIRTVER).repo RPM-GPG-ovirt fabiand-ovirt-tree-hacks.spec-epel-7.r
 
 .PHONY: $(OBJS)
 
-all: $(OBJS)
+all: $(OBJS) centos-ovirt-host.json
 	echo Done
+
+centos-ovirt-host.json: centos-ovirt-host.json.in
+	sed "s/@OVIRT_SLOT@/$(OVIRTVER)/g ; s/@DIST@/$(DIST)/g ; s/\$$releasever/$(RELVER)/g" "$@.in" > "$@"
 
 ovirt-$(OVIRTVER).repo:
 	:> "$@"
